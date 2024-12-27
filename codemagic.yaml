@@ -1,0 +1,14 @@
+workflows:
+  flutter-tests:
+    name: Run Flutter Tests
+    triggering:
+      events:
+        - push
+    environment:
+      flutter: stable
+    scripts:
+      # Install dependencies
+      - flutter pub get
+      # Run Flutter tests
+      - flutter test --coverage
+   
